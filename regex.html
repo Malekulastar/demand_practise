@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>regex</title>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+	<div class="container">
+	<form>
+  <div class="form-group">
+  	<div class="alert alert-primary" role="alert">
+  Validate E-mail here:
+</div>
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="Email" aria-describedby="emailHelp">
+    <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+  </div>
+ 
+ 
+  <button type="submit" onclick="validate()" class="btn btn-primary">Validate E-mail</button>
+</form>
+
+	</div>
+
+</body>
+
+<script>
+  function validate(){
+  	var mailformat =/^([a-zA-Z0-9\d\.-]+) @([a-z\d-]+)  \.([a-z]{2,8}) (\.[a-z]{2,8})?  $/;
+    var mail = document.getElementById('Email').value;
+    if(mail.match(mailformat)){
+       alert("Correct Email Format")
+    }else
+    alert("wrong input");
+  }
+</script>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    
+</head>
+<body>
+    <h1>Hello World</h1>
+  
+    <p>Name of the Task : 
+      <span id="todo"></span>
+    </p>
+<div id="common"></div>
+<input type="button" value="Save" onclick="alert('Clicked!')">
+<input type="button" value ="change" onclick="showAlert()">
+<h1 style="align: center;"> data fetched from local storage</h1><br><br>
+ <div id="target">
+
+</div>
+    
+</body>
+<script type="text/javascript">
+  
+    var color = [, "#3C9EE7", "#E7993C", 
+        "#E73C99", "#3CE746", "#E7993C"];
+  
+    document.querySelector("input").addEventListener(
+            "mouseover", function () {
+                  
+        document.querySelector("input").style.background 
+            = color[Math.floor(Math.random() * color.length)];
+    })
+</script>
+<script>
+    
+    function showAlert() {
+       document.body.style.background = "yellow";
+    }
+
+     var para = document.createElement("P");
+     para.setAttribute("id",'comma')
+      document.getElementById("common").append(para)
+      para.innerText = "This is a paragraph.";
+
+       var div_element0 = document.createElement("div");
+        var th1 = document.createElement("h3")
+        var th2 = document.createElement("h3")
+        var th3 = document.createElement("h3")
+
+          div_element0.setAttribute("id",`th`)
+          div_element0.style.display="flex";
+          div_element0.style.width="800px"
+          div_element0.style.justifyContent="space-evenly";
+
+              document.getElementById("target").append(div_element0)
+                document.getElementById(`th`).append(th1)
+                document.getElementById(`th`).append(th2)
+                document.getElementById(`th`).append(th3)
+
+                    th1.innerHTML= "Task";
+                    th2.innerHTML="Date";
+                    th3.innerHTML="Status";
+
+
+    // var todo = [{
+    //     Task: "Buy this apple",
+    //     Date: "11/08/2023",
+    //     Status: "true"
+    // }, {
+    //     Task: "Buy this apple",
+    //     Date: "11/08/2023",
+    //     Status: "true"
+    // }, {
+    //     Task: "Buy this apple",
+    //     Date: "11/08/2023",
+    //     Status: "true"
+    // },{
+    //     Task: "Buy this apple",
+    //     Date: "11/08/2023",
+    //     Status: "true"
+    // }];
+
+    localStorage.setItem("todo", JSON.stringify([{
+        Task: "Buy this apple",
+        Date: "11/08/2023",
+        Status: "true"
+    }, {
+        Task: "Buy this apple",
+        Date: "11/08/2023",
+        Status: "true"
+    }, {
+        Task: "Buy this apple",
+        Date: "11/08/2023",
+        Status: "true"
+    },{
+        Task: "Buy this apple",
+        Date: "11/08/2023",
+        Status: "true"
+    }])
+);
+
+var todo=JSON.parse(localStorage.getItem("todo"))
+console.log(todo)
+
+
+for(var i=0;i<todo.length;i++)
+{
+    var div_element = document.createElement("div")
+    var heading_1 = document.createElement("h3")
+    var heading_2 = document.createElement("h3")
+    var heading_3 = document.createElement("h3")
+
+
+    div_element.setAttribute("id",`div${i}`)
+
+    div_element.style.display="flex";
+    div_element.style.width="800px"
+    div_element.style.justifyContent="space-evenly";
+    // heading_1.setAttribute("id",`Task${i}`)
+    // heading_2.setAttribute("id",`date${i}`)
+    // heading_3.setAttribute("id",`Status${i}`)
+
+document.getElementById("target").append(div_element)
+document.getElementById(`div${i}`).append(heading_1)
+document.getElementById(`div${i}`).append(heading_2)
+document.getElementById(`div${i}`).append(heading_3)
+
+heading_1.innerHTML= todo[i].Task;
+heading_2.innerHTML=todo[i].Date;
+heading_3.innerHTML=todo[i].Status;
+
+
+}
+
+
+
+
+    //document.getElementById("todo").innerHTML =todo.Task + ", " + todo.Date + ", " + todo.Status;
+   // document.getElementById("todo").innerText = todo;
+ 
+   console.log(todo[0].Task);
+   //document.getElementById("todo").innerHtml = todo.Task[0] + ", " + todo.Date[0] + ", " + todo.Status[0];
+</script>
+</html>

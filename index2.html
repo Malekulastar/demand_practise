@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>tableExample</title>
+  <meta charset="utf-8">
+  <link rel="icon" href="0001.jpg" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+<div class="jumbotron text-center">
+  <h1>My First Page</h1>
+  <p>HII THERE</p> 
+</div>
+  
+<div class="container">
+	<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col">Sr NO</th>
+      <th scope="col">First</th>
+      <th scope="col">Last</th>
+      <th scope="col">Due Date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>Mark</td>
+      <td>Otto</td>
+      <td>@mdo</td>
+    </tr>
+    <tr>
+      <th scope="row">2</th>
+      <td>Jacob</td>
+      <td>Thornton</td>
+      <td>@fat</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+    <tr>
+      <th scope="row">3</th>
+      <td>Larry</td>
+      <td>the Bird</td>
+      <td>@twitter</td>
+    </tr>
+  </tbody>
+</table></div><br><br>
+
+<div class="container">
+
+<table id="detail_table" class="table table-striped detail">  
+    <thead>  
+    <tr>  
+        <th>Sr no</th> 
+        <th colspan="2">Name</th> 
+        <th>Due Date</th> 
+        <th>Status</th>  
+    </tr>  
+</thead>  
+<tbody>  
+    <tr class="parent" id="row123" title="Click to expand/collapse" style="cursor: pointer;">  
+        <td>123<i class="fas fa-caret-down"></i></td>  
+        <td colspan="2">Bill Gates</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td> 
+    </tr>  
+    <tr class="child-row123" style="display: table-row;">  
+        <td> </td>  
+        <td>2021-01-02</td>  
+        <td>A short description of Microsoft revenue </td>  
+        <td>10/12/2021</td> 
+        <td>Active</td> 
+    </tr>  
+    <tr class="child-row123" style="display: table-row;">  
+        <td> </td>  
+        <td>2021-02-03</td>  
+        <td>Another New Project description</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>  
+    </tr>  
+    <tr class="child-row123" style="display: table-row;">  
+        <td> </td>  
+        <td>2021-03-04</td>  
+        <td>More New Stuff</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>   
+    </tr>  
+  
+    <tr class="parent" id="row456" title="Click to expand/collapse" style="cursor: pointer;">  
+        <td>456</td>  
+        <td colspan="2">Bill Brasky</td>  
+       <td>10/12/2021</td> 
+        <td>Active</td>  
+    </tr>  
+    <tr class="child-row456" style="display: none;">  
+        <td> </td>  
+        <td>2021-07-02</td>  
+        <td>A short Two Describe a Third description</td>  
+       <td>10/12/2021</td> 
+        <td>Active</td>   
+    </tr>  
+    <tr class="child-row456" style="display: none;">  
+        <td> </td>  
+        <td>2021-02-03</td>  
+        <td>Another New story description</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>  
+    </tr>  
+    <tr class="child-row456" style="display: none;">  
+        <td> </td>  
+        <td>2021-03-04</td>  
+        <td>More story  Stuff</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>  
+    </tr>  
+  
+    <tr class="parent" id="row789" title="Click to expand/collapse" style="cursor: pointer;">  
+        <td>789</td>  
+        <td colspan="2">Phil Upspace</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>  
+    </tr>  
+    <tr class="child-row789" style="display: none;">  
+        <td> </td>  
+        <td>2021-01-02</td>  
+        <td>A short New Games description</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>   
+    </tr>  
+    <tr class="child-row789" style="display: none;">  
+        <td> </td>  
+        <td>2021-04-03</td>  
+        <td>Another Games description</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td>  
+    </tr>  
+    <tr class="child-row789" style="display: none;">  
+        <td> </td>  
+        <td>2021-04-04</td>  
+        <td>More Games Stuff</td>  
+        <td>10/12/2021</td> 
+        <td>Active</td> 
+    </tr>  
+</tbody>  
+</table>  
+
+</div>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>  
+<script type="text/javascript">  
+    $(document).ready(function () {  
+            $('tr.parent')  
+                .css("cursor", "pointer")  
+                .attr("title", "Click to expand/collapse")  
+                .click(function () {  
+                    $(this).siblings('.child-' + this.id).toggle();  
+                });  
+            $('tr[@class^=child-]').hide().children('td');  
+    });  
+    </script> 
+
+
+
+<br><br><br>
+
+
+
+<div class="container scroller">
+    <div class=" tableFixHead">
+	<table class="table table-bordered">
+        <thead>
+  <tr>
+    <th>Account</th>
+    <th>Sub-Account</th>
+    <th>Target</th>
+    <th colspan="3">Opportunity</th>
+    <th colspan="2">Grand Total</th>
+  </tr></thead>
+  <tr>
+    <td class="">$100</td>
+    <td>$100</td>
+    <td>Amount</td>
+    <td>Name</td>
+    <td>Amount</td>
+    <td>Total</td>
+    <td>Target</td>
+    <td>Opportunity</td>
+  </tr>
+  <tr>
+  	<td rowspan="7">Alphabet</td>
+  	<td rowspan="3">Google</td>
+  	<td rowspan="3">$1 M</td>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="3">$300 k</td>
+    <td rowspan="7">$10 M</td>
+    <td rowspan="7">$800 K</td>
+  </tr>
+  <tr>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+  </tr>
+   <tr>
+    <td rowspan="">Q2</td>
+    <td rowspan="">$100 k</td>
+  </tr> 
+  
+  <tr>
+    <td rowspan="2">Youtube</td>
+    <td rowspan="2">$1 M</td>
+    <td rowspan="">Q2</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="2">$200k</td>
+
+  </tr>
+  <tr>
+     <td rowspan="">Q5</td>
+    <td rowspan="">$100 k</td>
+  </tr>
+
+  <tr>
+    <td rowspan="">Android</td>
+    
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q6</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+  </tr>
+<tr>
+    <td rowspan="">Nest</td>
+    
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q6</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+  </tr>
+  <tr></tr>
+  <tr>
+    <tr><td  colspan="1"></td></tr>
+</tr>
+
+
+  <tr>
+    <td rowspan="2">Microsoft</td>
+    <td rowspan="">Microsoft Asia</td>
+    <td rowspan="">$5 M</td>
+    <td rowspan="">N1</td>
+    
+    <td rowspan="">$200 k</td>
+    <td rowspan="">$200 k</td>
+    <td rowspan=""> $5 M</td>
+    <td rowspan="2"> $600 K</td>
+  </tr>
+
+  <tr>
+      <td rowspan="">Microsoft Europe</td>
+    <td rowspan="">$5 M</td>
+    <td rowspan="">N2</td>
+    
+    <td rowspan="">$200 k</td>
+    <td rowspan="">$200 k</td>
+    <td rowspan=""> $5 M</td>
+  </tr>
+  <tr>
+    <tr><td  colspan="1"></td></tr>
+</tr>
+
+<tr style="background-color: yellow;">
+    <td><h3><b>Total</b></h3></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td></td>
+    <td><h3><b>$20M</b></h3></td>
+    <td><h3><b>$1.400M</b></h3></td>
+
+</tr>
+<tr>
+    <td rowspan="">Alphabet</td>
+    <td rowspan="">Google</td>
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+    <td rowspan="">$10 M</td>
+    <td rowspan="">$800 K</td>
+  </tr>
+
+  <tr>
+    <td rowspan="">Alphabet</td>
+    <td rowspan="">Google</td>
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+    <td rowspan="">$10 M</td>
+    <td rowspan="">$800 K</td>
+  </tr>
+
+  <tr>
+    <td rowspan="">Alphabet</td>
+    <td rowspan="">Google</td>
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+    <td rowspan="">$10 M</td>
+    <td rowspan="">$800 K</td>
+  </tr>
+
+  <tr>
+    <td rowspan="">Alphabet</td>
+    <td rowspan="">Google</td>
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+    <td rowspan="">$10 M</td>
+    <td rowspan="">$800 K</td>
+  </tr>
+
+  <tr>
+    <td rowspan="">Alphabet</td>
+    <td rowspan="">Google</td>
+    <td rowspan="">$1 M</td>
+    <td rowspan="">Q1</td>
+    <td rowspan="">$100 k</td>
+    <td rowspan="">$300 k</td>
+    <td rowspan="">$10 M</td>
+    <td rowspan="">$800 K</td>
+  </tr>
+
+</table></div>
+</div>
+
+<style type="text/css">
+    
+    .scroller {
+  width: 680px;
+  height: 600px;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+}
+
+.tableFixHead thead th { position: sticky; top: 0;background:#eee; }
+
+
+</style>
+
+
+
+
+
+
+
+<!-- striped table-->
+
+<style>
+table {
+  border-collapse: collapse;
+  width: 80%;
+  margin-left: 2rem;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+</style>
+
+
+
+
+
+<table>
+  <tr>
+  <th>First Name</th>
+  <th>Last Name</th>
+  <th>Points</th>
+  </tr>
+  <tr>
+  <td>Peter</td>
+  <td>Griffin</td>
+  <td>$100</td>
+  </tr>
+  <tr>
+  <td>Lois</td>
+  <td>Griffin</td>
+  <td>$150</td>
+  </tr>
+  <tr>
+  <td>Joe</td>
+  <td>Swanson</td>
+  <td>$300</td>
+  </tr>
+  <tr>
+  <td>Cleveland</td>
+  <td>Brown</td>
+  <td>$250</td>
+  </tr>
+</table>
+
+
+<img src="Screenshot (584).png" >
+
+
+
+<br><br><br>
+<table style=" border: 1px solid red;">
+  <tr>
+    <td>1.1</td>
+    <td style=" visibility: collapse;">1.2</td>
+    <td>1.3</td>
+  </tr>
+  <tr style=" visibility: collapse;">
+    <td>2.1</td>
+    <td>2.2</td>
+    <td>2.3</td>
+  </tr>
+  <tr>
+    <td>3.1</td>
+    <td>3.2</td>
+    <td>3.3</td>
+  </tr>
+</table>
+
+
+
+
+<br><br>
+
+<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</div>
+
+
+
+
+
+
+</body>
+</html>

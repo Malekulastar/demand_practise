@@ -1,0 +1,18 @@
+:root {
+  --main-bg-color:  lightblue;
+}
+
+body {
+  background-color: var(--main-bg-color);
+  border-style: dotted;
+  margin: 10px;
+}
+img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height:200px;
+  width: 40%;
+}
+
+
