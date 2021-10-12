@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>TODO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy"
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://kit.fontawesome.com/7ff7463fc9.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+
+<style>
+  .scroll1{
+  background-color: #eee;
+  /* width: 200px;
+  height: 50px; */
+
+  overflow-y: auto;
+    overflow-x: hidden;
+    
+
+  }
+</style>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="#">
+          <img src="https://t3.ftcdn.net/jpg/04/51/57/86/360_F_451578601_LbwttuXO2Rlk91U5zGCbFWO3ZO3NBfcp.jpg" width="30" height="30" class="d-inline-block align-top" alt="">
+          My Todo
+        </a>
+      </nav>
+
+    <div class="container" style="border: 2px solid; padding: 50px;padding-top: 50px;">
+        
+        <div class="row" style="border: 2px solid;">
+          <div class="col" style="border: 2px solid;padding: 5px;">
+            <form onsubmit="makeToDo(); return false">
+              
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Task</label>
+                  <input type="text" class="form-control" id="task" aria-describedby="emailHelp" placeholder="Enter Task">
+                 
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Date</label>
+                    <input type="date" class="form-control" id="date" aria-describedby="emailHelp" placeholder="Enter email">
+                   
+                  </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Status</label>
+                  <input type="text" class="form-control" id="status" placeholder="Status">
+                </div>
+               
+                <button type="submit"  class="btn btn-primary">Submit</button>
+                <button type="reset" class="btn btn-primary">Reset</button>
+              </form>
+          </div>
+          
+
+          <div class="col" id="showTodo"style="border: 2px solid; padding: 5px;background-color:#F5F5F5;height:340px;overflow-y: scroll; ">
+          
+          </div>
+        </div>
+        </div>
+</body>
+
+<script>
+    var task = document.querySelector("#task");
+    var date = document.querySelector("#date");
+    var status = document.querySelector("#status");
+    
+
+    const showTodo=()=>
+    {
+        var todoData=JSON.parse(localStorage.getItem("TODO"));
+    document.getElementById("showTodo").innerHTML=""
+    for(let i=0;i<todoData?.length;i++)
+    {
+         document.getElementById("showTodo").innerHTML +=`<div class="d-flex" style="justify-content:  space-between;"><h5 class="m-2">${todoData[i].task}</h5><h5 class="m-2">${todoData[i].date}</h4><h5 class="m-2">${todoData[i].status}</h5> <h5><div onclick=  "deleteTask(${i})"; ><i class="fas fa-trash"></i></div></h5></div>`
+
+        // document.getElementById("showTodo").innerHTML +=`<div class="d-flex" style="justify-content:  space-between;"><h5 class="m-2">${todoData[i].task}</h5><h5 class="m-2">${todoData[i].date}</h4><h5 class="m-2">${todoData[i].status}</h5><h5><div onclick=  "edit(${i})"; ><i class="fa fa-pencil-square-o"></i></div></h5> <h5><div onclick=  "deleteTask(${i})"; ><i class="fas fa-trash"></i></div></h5></div>`
+        // document.getElementById("showTodo").innerHTML +=`<tr><td class="m-2">${todoData[i].task}</td><td class="m-2">${todoData[i].date}</td><td class="m-2">${todoData[i].status}</td> <td><div onclick=  "deleteTask(${i})"; ><i class="fas fa-trash"></i></div></td></tr>`
+
+      }
+    }
+
+    const makeToDo =()=>
+    {
+    var task = document.querySelector("#task");
+    var date = document.querySelector("#date");
+    var status = document.querySelector("#status");
+
+    var taskList = {
+        task:task.value,
+        date:date.value,
+        status:status.value
+    };
+    var previousTodo=JSON.parse(localStorage.getItem("TODO"));
+    if(previousTodo)
+    {
+        localStorage.setItem("TODO",JSON.stringify([...previousTodo,taskList]))
+    }
+    else{
+        localStorage.setItem("TODO",JSON.stringify([taskList]))
+    }
+ showTodo()
+    }
+
+
+    
+    showTodo()
+    
+ function deleteTask(i){
+
+  if (confirm('Are you sure you want to Delete?')) {
+    let todoData = localStorage.getItem("TODO");
+    listArr= JSON.parse(todoData);
+    listArr.splice(i, 1)//delete a particular li
+
+    localStorage.setItem("TODO",JSON.stringify(listArr));
+    showTodo();
+  //  alert("are sure you want to delete this");
+} else {
+  
+}
+   }
+    
+function edit(i){
+  let todoData = localStorage.getItem("TODO");
+  ans=todoData[i];
+  console.log(ans)
+
+}
+
+
+</script>
+</html>
